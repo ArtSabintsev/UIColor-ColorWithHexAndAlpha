@@ -95,7 +95,6 @@
     CGFloat blueValue = blueHexInt/255.0f;
     
     return [UIColor colorWithRed:redValue green:greenValue blue:blueValue alpha:alpha];
-
 }
 
 @end

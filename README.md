@@ -3,7 +3,7 @@
 ## Create UIColor objects using hex values
 
 ### About
-**UIColor+ColorWithHexAndAlpha** is a category on UIColor that enables you to use hex values to create UIColor objects.
+**UIColor+ColorWithHexAndAlpha** is a category on UIColor that enables you to use 3-character and 6-character hex color values to create UIColor objects.
 
 ### Installation Instructions:
 
@@ -14,16 +14,22 @@
  
 <pre>
 
-// Example
+// Example with 6 Digits
 UIColor *limeGreenColor = [UIColor colorWithHex:@"BFFF00" andAlpha:1.0f];
+
+// Example with 3 Digits
+UIColor *aquaBlueColor = [UIColor colorWithHex:@"0FF" andAlpha:1.0f];
 
 </pre>
 
 ### Inspired by:
 - [Tom Rybakiewicz's answer on StackOverflow](http://stackoverflow.com/a/8855057/814861)
 
+###  Release Notes (v1.1.0):
+- Added support for 3 character hex values
 
-###  Release Notes (v1.0.0):
+###  Previous Release Notes:
+#### v1.0.0
 - Initial Release
 
 ### Recognition:

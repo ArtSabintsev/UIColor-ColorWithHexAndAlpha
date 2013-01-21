@@ -8,13 +8,71 @@
 
 #import "UIColor+ColorWithHexAndAlpha.h"
 
+@interface UIColor (PrivateColorWithHexAndAlpha)
+
++ (UIColor *)colorWith3DigitHex:(NSString *)hex andAlpha:(CGFloat)alpha;
++ (UIColor *)colorWith6DigitHex:(NSString *)hex andAlpha:(CGFloat)alpha;
+
+@end
+
 @implementation UIColor (ColorWithHexAndAlpha)
 
+#pragma mark - Public Methods
 + (UIColor*)colorWithHex:(NSString*)hex andAlpha:(CGFloat)alpha
 {
 
-    NSAssert( hex.length == 6 , @"Your hex color value is too long.");
+    UIColor *color;
     
+    switch ( hex.length ) {
+            
+        case 3:
+            color = [UIColor colorWith3DigitHex:hex andAlpha:alpha];
+            break;
+            
+        case 6:
+            color = [UIColor colorWith6DigitHex:hex andAlpha:alpha];
+            break;
+            
+        default:
+            NSAssert( hex.length == 6 || hex.length == 3 , @"Your hex color value is malformed. It should either be three or six characters in length.");
+            break;
+    }
+    
+    return color;
+}
+
+#pragma mark - Private Methods (PrivateColorWithHexAndAlpha)
++ (UIColor *)colorWith3DigitHex:(NSString *)hex andAlpha:(CGFloat)alpha
+{
+    // Red Value
+    NSString *redHexString = [hex substringWithRange:NSMakeRange(0, 1)];
+    NSString *modifiedRedHexString = [NSString stringWithFormat:@"%@%@", redHexString, redHexString];
+    NSScanner *redScanner = [NSScanner scannerWithString:modifiedRedHexString];
+    NSUInteger redHexInt = 0;
+    [redScanner scanHexInt:&redHexInt];
+    CGFloat redValue = redHexInt/255.0f;
+    
+    // Green Value
+    NSString *greenHexString = [hex substringWithRange:NSMakeRange(1, 1)];
+    NSString *modifiedGreenHexString = [NSString stringWithFormat:@"%@%@", greenHexString, greenHexString];
+    NSScanner *greenScanner = [NSScanner scannerWithString:modifiedGreenHexString];
+    NSUInteger greenHexInt = 0;
+    [greenScanner scanHexInt:&greenHexInt];
+    CGFloat greenValue = greenHexInt/255.0f;
+    
+    // Blue Value
+    NSString *blueHexString = [hex substringWithRange:NSMakeRange(2, 1)];
+    NSString *modifiedBlueHexString = [NSString stringWithFormat:@"%@%@", blueHexString, blueHexString];
+    NSScanner *blueScanner = [NSScanner scannerWithString:modifiedBlueHexString];
+    NSUInteger blueHexInt = 0;
+    [blueScanner scanHexInt:&blueHexInt];
+    CGFloat blueValue = blueHexInt/255.0f;
+    
+    return [UIColor colorWithRed:redValue green:greenValue blue:blueValue alpha:alpha];
+}
+
++ (UIColor *)colorWith6DigitHex:(NSString *)hex andAlpha:(CGFloat)alpha
+{
     // Red Value
     NSString *redHexString = [hex substringWithRange:NSMakeRange(0, 2)];
     NSScanner *redScanner = [NSScanner scannerWithString:redHexString];
@@ -37,7 +95,7 @@
     CGFloat blueValue = blueHexInt/255.0f;
     
     return [UIColor colorWithRed:redValue green:greenValue blue:blueValue alpha:alpha];
-    
+
 }
 
 @end

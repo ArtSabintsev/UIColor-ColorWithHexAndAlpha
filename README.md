@@ -14,10 +14,10 @@
  
 <pre>
 
-// Example with 6 Digits
+// Example with 6 Characters
 UIColor *limeGreenColor = [UIColor colorWithHex:@"BFFF00" andAlpha:1.0f];
 
-// Example with 3 Digits
+// Example with 3 Characters
 UIColor *aquaBlueColor = [UIColor colorWithHex:@"0FF" andAlpha:1.0f];
 
 </pre>

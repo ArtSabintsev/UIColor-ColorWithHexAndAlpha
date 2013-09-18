@@ -5,6 +5,9 @@
 ### About
 **UIColor+ColorWithHexAndAlpha** is a category on UIColor that enables you to use 3-character and 6-character hex color values to create UIColor objects.
 
+###  Release Notes (v1.1.1):
+- Changed `UIColor` return type to `instancetype`
+
 ### Installation Instructions:
 
 1. Copy the **UIColor+ColorWithHexAndAlpha** folder into your Xcode project. The following files will be added:
@@ -24,9 +27,6 @@ UIColor *aquaBlueColor = [UIColor colorWithHex:@"0FF" andAlpha:1.0f];
 
 ### Inspired by:
 - [Tom Rybakiewicz's answer on StackOverflow](http://stackoverflow.com/a/8855057/814861)
-
-###  Release Notes (v1.1.0):
-- Added support for 3 character hex values
 
 ### Recognition:
 

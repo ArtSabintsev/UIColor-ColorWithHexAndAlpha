@@ -48,7 +48,7 @@
     NSString *redHexString = [hex substringWithRange:NSMakeRange(0, 1)];
     NSString *modifiedRedHexString = [NSString stringWithFormat:@"%@%@", redHexString, redHexString];
     NSScanner *redScanner = [NSScanner scannerWithString:modifiedRedHexString];
-    NSUInteger redHexInt = 0;
+    unsigned int redHexInt = 0;
     [redScanner scanHexInt:&redHexInt];
     CGFloat redValue = redHexInt/255.0f;
     
@@ -56,7 +56,7 @@
     NSString *greenHexString = [hex substringWithRange:NSMakeRange(1, 1)];
     NSString *modifiedGreenHexString = [NSString stringWithFormat:@"%@%@", greenHexString, greenHexString];
     NSScanner *greenScanner = [NSScanner scannerWithString:modifiedGreenHexString];
-    NSUInteger greenHexInt = 0;
+    unsigned int  greenHexInt = 0;
     [greenScanner scanHexInt:&greenHexInt];
     CGFloat greenValue = greenHexInt/255.0f;
     
@@ -64,7 +64,7 @@
     NSString *blueHexString = [hex substringWithRange:NSMakeRange(2, 1)];
     NSString *modifiedBlueHexString = [NSString stringWithFormat:@"%@%@", blueHexString, blueHexString];
     NSScanner *blueScanner = [NSScanner scannerWithString:modifiedBlueHexString];
-    NSUInteger blueHexInt = 0;
+    unsigned int  blueHexInt = 0;
     [blueScanner scanHexInt:&blueHexInt];
     CGFloat blueValue = blueHexInt/255.0f;
     
@@ -76,21 +76,21 @@
     // Red Value
     NSString *redHexString = [hex substringWithRange:NSMakeRange(0, 2)];
     NSScanner *redScanner = [NSScanner scannerWithString:redHexString];
-    NSUInteger redHexInt = 0;
+    unsigned int  redHexInt = 0;
     [redScanner scanHexInt:&redHexInt];
     CGFloat redValue = redHexInt/255.0f;
     
     // Green Value
     NSString *greenHexString = [hex substringWithRange:NSMakeRange(2, 2)];
     NSScanner *greenScanner = [NSScanner scannerWithString:greenHexString];
-    NSUInteger greenHexInt = 0;
+    unsigned int  greenHexInt = 0;
     [greenScanner scanHexInt:&greenHexInt];
     CGFloat greenValue = greenHexInt/255.0f;
     
     // Blue Value
     NSString *blueHexString = [hex substringWithRange:NSMakeRange(4, 2)];
     NSScanner *blueScanner = [NSScanner scannerWithString:blueHexString];
-    NSUInteger blueHexInt = 0;
+    unsigned int  blueHexInt = 0;
     [blueScanner scanHexInt:&blueHexInt];
     CGFloat blueValue = blueHexInt/255.0f;
     

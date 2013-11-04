@@ -5,8 +5,8 @@
 ### About
 **UIColor+ColorWithHexAndAlpha** is a category on UIColor that enables you to use 3-character and 6-character hex color values to create UIColor objects.
 
-###  Release Notes (v1.1.1):
-- Changed `UIColor` return type to `instancetype`
+###  Release Notes (v1.1.2):
+- Fixed LLVM 5.0 compilation issue regarding `NSUIngeger` and `unsigned int`
 
 ### Installation Instructions:
 
@@ -28,7 +28,7 @@ UIColor *aquaBlueColor = [UIColor colorWithHex:@"0FF" andAlpha:1.0f];
 ### Inspired by:
 - [Tom Rybakiewicz's answer on StackOverflow](http://stackoverflow.com/a/8855057/814861)
 
-### Recognition:
+### Created and maintained by:
 
 Created by [Arthur Ariel Sabintsev](http://www.sabintsev.com)  
 
